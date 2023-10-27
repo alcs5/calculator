@@ -1,0 +1,60 @@
+@import 'utils';
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body {
+    min-height: 100vh;
+}
+
+body {
+    @include flex(center, center, row, 0px);
+    background-color: #000;
+    position: relative;
+}
+
+.calculator {
+    @include flex(center, space-between, column, 0px);
+    @include size(500px, 500px, #000);
+    @include border(2px, #0af, 12px);
+    padding: 20px;
+
+
+    .operation {
+        @include size(100%, 20%, transparent);
+        text-align: end;
+        font-size: 3rem;
+        color: #fff;
+        overflow-x: scroll;
+    }
+}
+
+.operators {
+    @include size(100%, 80%, transparent);
+    @include border(2px, #0af, 12px);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    overflow: hidden;
+
+    .equal {
+        grid-column: 4 / span 2;
+    }
+
+
+    div {
+        @include flex(center, center, row, 0px);
+        @include size(100%, 100%, transparent);
+        color: #fff;
+        font-size: 40px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgba(128, 128, 128, 0.5);
+        }
+    }
+}

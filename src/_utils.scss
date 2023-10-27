@@ -1,0 +1,18 @@
+@mixin flex($ai , $jc , $dir , $gap) {
+    display: flex;
+    align-items: $ai;
+    justify-content: $jc;
+    flex-direction: $dir;
+    gap: $gap;
+}
+
+@mixin size($w , $h , $color) {
+    width: $w;
+    height: $h;
+    background-color: $color;
+}
+
+@mixin border($width , $color , $radius) {
+    border-radius: $radius;
+    border: $width solid $color;
+}
